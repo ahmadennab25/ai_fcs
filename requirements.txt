@@ -1,0 +1,9 @@
+Django == 4.2.30
+djangorestframework == 3.15.2
+python-decouple == 3.8
+crewai
+crewai-tools
+openai == 1.70.0
+psycopg2-binary == 2.9.10
+Pillow
+requests

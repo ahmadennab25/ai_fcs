@@ -1,0 +1,42 @@
+write_post_task:
+  description: |
+    ### Inputs:
+    - **topic:** {topic}
+    - **campaign_objective:** {campaign_objective}
+    - **target_audience:** {target_audience}
+    - **tone:** {tone}
+    - **brand_voice:** {brand_voice}
+    - **keywords:** {keywords}
+
+    ### Task:
+    Write a ready-to-publish Facebook post for this campaign.
+    1. Read the topic, campaign_objective, target_audience, tone and
+       brand_voice carefully.
+    2. Write a caption that fits the topic, serves the campaign_objective,
+       speaks to the target_audience, and matches the tone and brand_voice.
+       Use line breaks and emoji naturally, the way a real Facebook post
+       reads.
+    3. Include any required keywords naturally in the caption or hashtags
+       when relevant.
+    4. Produce a short list of relevant hashtags.
+    5. Write a clear, specific call to action.
+    6. Write a single vivid, concrete image prompt describing one scene
+       (subject, setting, style, mood, colours) that an illustrator or an
+       image-generation model could render to accompany this post.
+
+    Do not invent claims that are not supported by the campaign brief. After
+    writing, format your answer as JSON exactly matching the structure in
+    expected_output.
+
+  expected_output: >
+    Return ONLY a JSON object (do NOT wrap it in ```json fences, start
+    directly with {) using this exact structure:
+
+    {
+      "caption": "the full Facebook post text, with line breaks and emoji",
+      "hashtags": ["#tag", "..."],
+      "call_to_action": "e.g. Order yours today 👉 link",
+      "image_prompt": "a vivid, concrete visual description for an illustrator"
+    }
+
+  agent: facebook_copywriter

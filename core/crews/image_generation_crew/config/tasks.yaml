@@ -1,0 +1,29 @@
+generate_image_task:
+  description: |
+    ### Inputs:
+    - **image_prompt:** {image_prompt}
+    - **caption:** {caption}
+
+    ### Task:
+    Prepare and generate the image for this Facebook post.
+    1. Read the image_prompt and, for context, the caption.
+    2. Refine the image_prompt into a final prompt suitable for Facebook: a
+       single clear scene, a brand-safe style, and an aspect ratio that
+       works well in a Facebook feed.
+    3. Call the image generation tool with the final prompt to actually
+       generate the image.
+    4. Use the exact value the tool returns as image_reference.
+
+    You must call the image generation tool — do not return a result
+    without having called it.
+
+  expected_output: >
+    Return ONLY a JSON object (do NOT wrap it in ```json fences, start
+    directly with {) using this exact structure:
+
+    {
+      "prompt_used": "the final prompt",
+      "image_reference": "path or url returned by the tool"
+    }
+
+  agent: art_director
